@@ -31,7 +31,7 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing = Listing.new(listing_params)
-    @listing.user_id = current_user.id
+    @listing.user_id = 1
 
     if current_user.recipient.blank?
       Stripe.api_key = ENV["STRIPE_API_KEY"]
